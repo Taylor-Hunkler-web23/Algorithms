@@ -40,20 +40,25 @@ import argparse
 
 def find_max_profit(prices):
     min_price = 0
+    # print('min price start', min_price)
     max_price = (len(prices)-1)
 
 #loop through array finding the smallest price 
 
-    for i in range(len(prices)-1):
+    for i in range(1, len(prices)-1):
         if prices [i] < prices[min_price]:
             min_price = i
+            # print('min final',prices[min_price])
+
 
 #loop through the array starting after min price finding the biggest price 
 
-    for i in range(min_price+1, len(prices)):
+
+    for i in range(min_price+1, len(prices)-1):
         if prices[max_price]<prices[i]:
             max_price = i
-
+           
+            
 
 #max price minus min price
     return prices[max_price] - prices[min_price]

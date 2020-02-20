@@ -33,22 +33,25 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-
-#loop through recipe
-  for i in recipe:
+    whole_batch = []
+#loop through recipe and ingredients
+    for i in recipe:
+      # print("recipe",recipe[i])
+      # print("ing",ingredients[i])
  
- #if its not in ingreidents
-      if i not in ingredients:
+ #if its not in ingreidents or if more than in ingredients
+      if i not in ingredients or recipe[i] > ingredients[i]: 
           return 0
 
-#if more than in ingredients
-      if recipe[i] > ingredients[i]:
-          return 0
-
-
-          batches= ingredients[i] // recipe[i]
-
-          return batches
+#how many times can each ingreident be used for the recipe, append it to whole_batch
+      else:
+         whole_batch.append (ingredients[i] // recipe[i])
+     
+      
+    print("before", whole_batch)
+    print("after", min(whole_batch))
+    # return the min number to get how many total batches we can make with all ingredients
+    return min(whole_batch)
 
 
 
