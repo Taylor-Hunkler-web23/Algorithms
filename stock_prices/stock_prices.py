@@ -23,36 +23,30 @@
 # 1.input list of stock prices
 # 2. return maximum profit by subtracting largest price from smallest price- BUT smallest price most come BEFORE largest price
 #loop through prices. 
-# [50, 200, 1, 10, 30, 40, 35]
-# could do: 50 - 20= 30, 50 - 10 = 30, 50 - 100= -50. iterate through each umber subtracting numbers after to find biggest positive difference.
+# [50, 20, 1, 10, 30, 40, 35]
 #find the smallest price and minus from biggest price.
-#we don't care about the last price for finding smallest price beacsue we can't minus a larger price from it
 
 #loop through array -1 finding the smallest price 
-#loop through the array starting at smallest price finding biggest price 
 
-# [50, 200, 1, 10, 30, 40, 35]
-    # min_price = 0
-    # max_price = (len(prices)-1)
-# i count =
+# [50, 20, 1, 10, 30, 40, 35]
+
 
 import argparse
 
 def find_max_profit(prices):
+
+  #starting indexes
     min_price = 0
-    # print('min price start', min_price)
     max_price = (len(prices)-1)
 
-#loop through array finding the smallest price 
-
+#loop through array, comparing elements, finding the smallest price
+  
     for i in range(1, len(prices)-1):
         if prices [i] < prices[min_price]:
             min_price = i
-            # print('min final',prices[min_price])
 
 
-#loop through the array starting after min price finding the biggest price 
-
+#loop through the array starting at smallest price, comparing elements, finding biggest price 
 
     for i in range(min_price+1, len(prices)-1):
         if prices[max_price]<prices[i]:
