@@ -2,8 +2,15 @@
 
 import sys
 
+plays = ["rock", "paper", "scissors"]
 def rock_paper_scissors(n):
-  pass 
+
+  # combos = []
+
+    if n == 0:
+        return [] 
+    if n == 1:
+        return plays
 
 
 if __name__ == "__main__":
